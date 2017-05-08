@@ -50,14 +50,15 @@ function myTweets() {
 	// var queryURL = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=paigethecoder&count=2"
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
+
 		if (!error) {
-		console.log(tweets[0].text);
-		console.log(tweets[0].created_at);
-		
-	};
+			for (var i = 0; i < tweets.length; i++) {
+				console.log("tweet: " + tweets[i].text + "\n created at: " + tweets[i].created_at);
 
+			}			
+		};
 
-});
+	});
 
 };
 
